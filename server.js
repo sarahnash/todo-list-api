@@ -21,25 +21,25 @@ app.get('/api/todos', function (req, res, nextFn) {
 // GET /api/todos/:id
 app.get('/api/todos/:id', function (req, res, nextFn) {
   console.log(req.params.id)
-  res.send('this is the req.params.id: ' + req.params.id)
+  res.send(todoList[req.params.id - 1])
 })
 
 // POST /api/todos
 app.post('/api/todos', function (req, res, nextFn) {
   console.log(req.body)
-  res.send('req.body is an empty object')
+  res.send('req.body is an empty object, how do I put something in it, with a nextFN?')
 })
 
 // PUT /api/todos/:id
 app.put('/api/todos/:id', function (req, res, nextFn) {
   console.log(req.params.id)
-  res.send('putting something in this req.params.id: ' + req.params.id)
+  res.send('putting something in this req.params.id: ' + req.params.id + ' But what?')
 })
 
 // DELETE /api/todos/:id
 app.delete('/api/todos/:id', function (req, res, nextFn) {
-  console.log(req.params.id)
-  res.send('you deleted req.params.id: ' + req.params.id)
+  console.log('you deleted req.params.id: ' + req.params.id)
+  res.send(todoList)
 })
 
 app.listen(3000, function () {
